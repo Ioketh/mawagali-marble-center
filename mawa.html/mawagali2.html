@@ -1,0 +1,684 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mawaggali Marble and Granite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #f4f4f4;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .subHeader {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .subHeader img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .contact-info {
+            margin-top: 10px;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            padding: 10px 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .gallery-item {
+            margin: 10px;
+            text-align: center;
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .filter-buttons button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .filter-buttons button.active {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                padding: 10px;
+            }
+
+            .subHeader img {
+                width: 200px;
+            }
+        }
+        #loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="subHeader">
+            <div>
+                <h1 style="color: rgb(39, 11, 11);">Mawaggali Marble and Granite</h1>
+                <p>Your Trusted Partner for Marble and Granite Solutions</p>
+                <div class="contact-info">
+                    <p>Contact Us: +256705606889</p>
+                    <p>Email: <a href="mailto:Mawaggalimg@gmail.com">Mawaggalimg@gmail.com</a></p>
+                    <p>Location: Tulla Road, Kawempe, Kampala</p>
+                </div>
+            </div>
+            <img src="pic.jpg" alt="Mawaggali Marble and Granite">
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to Mawaggali Marble and Granite, your premier destination for high-quality marble and granite solutions. We specialize in providing top-notch materials and services for countertops, laboratories, tombs, and various construction sites.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Chicken Worktops</li>
+            <li>Laboratory Countertops</li>
+            <li>Tombs and Memorials</li>
+            <li>Custom Marble and Granite Solutions</li>
+        </ul>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="filter-buttons">
+            <button class="filter-button active" data-filter="all">All</button>
+            <button class="filter-button" data-filter="tombs">Modern Tombs</button>
+            <button class="filter-button" data-filter="worktops">Chicken & Worktops</button>
+            <button class="filter-button" data-filter="stairs">Stairs</button>
+            <button class="filter-button" data-filter="others">Others</button>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item" data-category="worktops">
+                <img src="blackchicken.jpg" alt="Marble and Granite">
+                <p>Chicken Worktop</p>
+            </div>
+            <div class="gallery-item" data-category="tombs">
+                <img src="tomb1.jpg" alt="Modern Tomb">
+                <p>Modern Tomb</p>
+            </div>
+            <div class="gallery-item" data-category="worktops">
+                <img src="blackchicken2.jpg" alt="Marble and Granite">
+                <p>Chicken Worktop</p>
+            </div>
+            <div class="gallery-item" data-category="stairs">
+                <img src="stairs1.jpg" alt="Stairs">
+                <p>Stairs</p>
+            </div>
+            <div class="gallery-item" data-category="others">
+                <img src="flow.jpg" alt="Compound">
+                <p>Compound</p>
+            </div>
+            <div class="gallery-item" data-category="tombs">
+                <img src="tomb2.jpg" alt="Modern Tomb">
+                <p>Modern Tomb</p>
+            </div>
+            <div class="gallery-item" data-category="tombs">
+                <img src="tomb3.jpg" alt="Modern Tomb">
+                <p>Modern Tomb</p>
+            </div>
+            <div class="gallery-item" data-category="worktops">
+                <img src="peradizochicken.jpg" alt="Marble and Granite">
+                <p>Marble and Granite</p>
+            </div>
+            <div class="gallery-item" data-category="others">
+                <img src="mawale.jpg" alt="Marble and Granite">
+                <p>Marble and Granite</p>
+            </div>
+            <div class="gallery-item" data-category="others">
+                <img src="whitemarble bathroom.jpg" alt="Marble and Granite">
+                <p>Marble and Granite bathroom design</p>
+            </div>
+            <div class="gallery-item" data-category="others">
+                <img src="blackgraxcix.jpg" alt="Marble and Granite">
+                <p>Marble and Granite</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mawaggali Marble and Granite. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Contact Form Validation
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !email || !message) {
+                alert('Please fill out all fields.');
+                event.preventDefault();
+            } else {
+                alert('Thank you for your message!');
+                // Here you can add code to send the form data to a server
+                event.preventDefault();
+            }
+        });
+
+        // Dynamic Gallery Filter
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const filterButtons = document.querySelectorAll('.filter-button');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filterValue = button.getAttribute('data-filter');
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to the clicked button
+                    button.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mawaggali Marble and Granite</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+           
+
+         header {
+            background-color: #f4f4f4;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .subHeader {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .subHeader img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .contact-info {
+            margin-top: 10px;
+        } 
+
+        nav {
+            background-color: #333;
+            color: #fff;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            padding: 10px 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .gallery-item {
+            margin: 10px;
+            text-align: center;
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .filter-buttons button  {
+            
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .filter-buttons button.active {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                padding: 10px;
+            }
+
+            .subHeader img {
+                width: 200px;
+            }
+        }
+        #loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+.contact-section {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.contact-section:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 20px; /* Spacing between form elements */
+}
+
+.contact-form h2 {
+    text-align: center;
+    color: #333;
+}
+
+.contact-form input, .contact-form textarea, .contact-form button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Rounded corners for form elements */
+    transition: border-color 0.3s ease, background-color 0.3s ease; /* Smooth transition for focus and hover */
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #333;
+    background-color: #f9f9f9; /* Light background on focus */
+}
+
+.contact-form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover */
+}
+
+.contact-form button:hover {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+ img {
+    border: 4px solid rgb(17, 17, 31);
+    max-height:fit-content;
+    margin: 3px;
+
+
+}
+</style>
+</head>
+<body>
+    <header>
+        <div class="subHeader">
+            <div>
+                <h1 style="color: rgb(39, 11, 11);">Mawaggali Marble and Granite</h1>
+                <p>Your Trusted Partner for Marble and Granite Solutions</p>
+                <div class="contact-info">
+                    <p>Contact Us: <a href="tel:+256706627721">+256706627721</a></p>
+                    <p>Email: <a href="mailto:Mawaggalimg@gmail.com">Mawaggalimg@gmail.com</a></p>
+                    <p>Location: Tulla Road, Kawempe, Kampala</p>
+                </div>
+            </div>
+            <img src="pic.jpg" alt="Mawaggali Marble and Granite">
+        </div>
+    </header>
+    <!-- <div id="loading-overlay"> -->
+        <!-- <div class="spinner"></div> -->
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to Mawaggali Marble and Granite, your premier destination for high-quality marble and granite solutions. We specialize in providing top-notch materials and services for countertops, laboratories, tombs, and various construction sites.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Chicken Worktops</li>
+            <li>Laboratory Countertops</li>
+            <li>Tombs and Memorials</li>
+            <li>Custom Marble and Granite Solutions</li>
+        </ul>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="filter-buttons">
+            <button class="filter-button active" data-filter="all">All</button>
+            <button class="filter-button" data-filter="tombs">Modern Tombs</button>
+            <button class="filter-button" data-filter="worktops">Chicken & Worktops</button>
+            <button class="filter-button" data-filter="stairs">Stairs</button>
+            <button class="filter-button" data-filter="others">Others</button>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item" data-category="worktops">
+                <img src="blackchicken.jpg" alt="Marble and Granite">
+                <p>Chicken Worktop</p>
+            </div>
+            <div class="gallery-item" data-category="tombs">
+                <img src="tomb1.jpg" alt="Modern Tomb">
+                <p>Modern Tomb</p>
+            </div>
+            <div class="gallery-item" data-category="worktops">
+                <img src="blackchicken2.jpg" alt="Marble and Granite">
+                <p>Chicken Worktop</p>
+            </div>
+            <div class="gallery-item" data-category="stairs">
+                <div class="stairdiv">
+                    <img src="stayers1.jpg" alt="Stairs">
+                    <p>grey black mixed stair</p>
+                    <img src="stair1.jpg" alt="Stairs" style=" max-width: 600px; max-height: 750px;">
+                     <p>Mercury grey sairs</p>
+                    <img src="stair2.jpg" alt="Stairs">
+                    <p>Nature white granite stiars</p>
+                </div>
+               
+
+                <p>Stairs</p>
+            </div>
+            <div class="gallery-item" data-category="others">
+                <img src="flow.jpg" alt="Compound">
+                <p>Compound</p>
+            </div>
+            <div class="gallery-item" data-category="tombs">
+                <img src="tomb2.jpg" alt="Modern Tomb">
+                <p>Modern Tomb</p>
+            </div>
+            <div class="gallery-item" data-category="tombs">
+                <img src="tomb3.jpg" alt="Modern Tomb">
+                <p>Modern Tomb</p>
+            </div>
+            <div class="gallery-item" data-category="worktops">
+                <img src="peradizochicken.jpg" alt="Marble and Granite">
+                <p>Marble and Granite</p>
+            </div>
+            <div class="gallery-item" data-category="others">
+                <img src="mawale.jpg" alt="Marble and Granite">
+                <p>Marble and Granite</p>
+            </div>
+            <div class="gallery-item" data-category="others">
+                <img src="whitemarble bathroom.jpg" alt="Marble and Granite">
+                <p>Marble and Granite bathroom design</p>
+            </div>
+            <div class="gallery-item" data-category="others">
+                <img src="blackgraxcix.jpg" alt="Marble and Granite">
+                <p>Marble and Granite</p>
+            </div>
+
+        </div>
+    </section>
+
+        <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <form class="contact-form" id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mawaggali Marble and Granite. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Contact Form Validation
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !email || !message) {
+                alert('Please fill out all fields.');
+                event.preventDefault();
+            } else {
+                alert('Thank you for your message!');
+                // Here you can add code to send the form data to a server
+                event.preventDefault();
+            }
+        });
+
+        // Dynamic Gallery Filter
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const filterButtons = document.querySelectorAll('.filter-button');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filterValue = button.getAttribute('data-filter');
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to the clicked button
+                    button.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
